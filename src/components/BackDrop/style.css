@@ -1,0 +1,18 @@
+/* @media all and (min-width : 240px) {}
+@media (min-width:640px) and (max-width: 959px) {}
+@media (min-width:960px) and (max-width: 1199px) {}
+@media (min-width:1200px) {} */
+
+@media all and (min-width : 240px) {
+    .back-drop__wrapper{
+        position: fixed;
+        background-color: rgba(0,0,0,.4);
+        height: 100%;
+        width: 100%;
+        z-index: 100;
+    }
+}
+@media (min-width:640px) and (max-width: 959px) {}
+@media (min-width:960px) and (max-width: 1199px) {}
+@media (min-width:1200px) {}
+
