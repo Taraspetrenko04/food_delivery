@@ -17,37 +17,39 @@ import { connect } from "react-redux"; //дает доступ к store
 // import * as actions from "../../storeTest/actionTest.js/index.js.js"; //импортируем все екшены(1) в bindActionCreator
 
 class App extends Component {
-  state = {
-    isOpen: false
-  };
+  // state = {
+  //   isOpen: false
+  // };
 
-  sideBarToggleHandler = () => {
-    let prevstate = this.state.isOpen;
-    this.setState(() => {
-      return {
-        isOpen: !prevstate
-      };
-    });
-  };
+  // sideBarToggleHandler = () => {
+  //   let prevstate = this.state.isOpen;
+  //   this.setState(() => {
+  //     return {
+  //       isOpen: !prevstate
+  //     };
+  //   });
+  // };
 
   render() {
-    let backdrop;
+    // let backdrop;
 
-    if (this.state.isOpen) {
-      backdrop = <BackDrop sideBarToggleHandler={this.sideBarToggleHandler} />;
-    }
+    // if (this.state.isOpen) {
+    //   backdrop = <BackDrop sideBarToggleHandler={this.sideBarToggleHandler} />;
+    // }
 
     return (
       <Fragment>
-            {backdrop}
-            <SideBar show={this.state.isOpen} />
-            <Header sideBarToggleHandler={this.sideBarToggleHandler} />
+            {/* {backdrop} */}
+            <BackDrop />
+            <SideBar />
+            
+            <Header />
 
             <Switch>
               <Route exact path="/" component={ props => <Layout> <Filter/> </Layout> }/>
               <Route exact path="/login" component={ Login }/>
               {/* <Filter /> */}
-    
+    {/* Динамическая маршрутизаци */}
               {/* <ProductPage /> */}
               {/* <Route path="*" component={NotFound}/> */}
             </Switch>

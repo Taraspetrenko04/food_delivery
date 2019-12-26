@@ -11,7 +11,7 @@ import Logo from '../Logo';
 // import * as actions from "../../actions"; //импортируем все екшены(1) в bindActionCreator 
 
 class Header extends Component{
-        sideBarToggleHandler = this.props;
+        // sideBarToggleHandler = this.props;
         render(){
         return(
             <div className='header__wrapper'>

@@ -141,21 +141,9 @@ class ModalWindow extends Component {
         return false;
       }
 
-      // const verifyData = () => {
-      //   if ( checkPas() )
-      // }
-
-      // users.forEach((obj) =>{
-      // if(obj.mail === mail){
-      //   console.log(true);
-      //   return true;
-      // }
-      // })
     };
 
-    // const getUsers = () => {
-    //   console.log(this.state.users);
-    // }
+    
 
     if (!this.state.isValidMail) {
       wrongMail = <p className="modal__warning">E-mail is not corect</p>;
