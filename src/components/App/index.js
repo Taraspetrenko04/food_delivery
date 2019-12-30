@@ -5,8 +5,9 @@ import Filter from "./../Filter";
 import SideBar from "../SideBar";
 import BackDrop from "../BackDrop/";
 import Layout from '../Layout';
-import ProductPage from '../ProductPage';
+// import ProductPage from '../ProductPage';
 import Login from '../Login';
+import Registration from '../Registration';
 import Footer from '../Footer';
 import "../../index.css";
 // import Modal from '../Modal';
@@ -17,25 +18,10 @@ import { connect } from "react-redux"; //дает доступ к store
 // import * as actions from "../../storeTest/actionTest.js/index.js.js"; //импортируем все екшены(1) в bindActionCreator
 
 class App extends Component {
-  // state = {
-  //   isOpen: false
-  // };
-
-  // sideBarToggleHandler = () => {
-  //   let prevstate = this.state.isOpen;
-  //   this.setState(() => {
-  //     return {
-  //       isOpen: !prevstate
-  //     };
-  //   });
-  // };
+  
 
   render() {
-    // let backdrop;
-
-    // if (this.state.isOpen) {
-    //   backdrop = <BackDrop sideBarToggleHandler={this.sideBarToggleHandler} />;
-    // }
+ 
 
     return (
       <Fragment>
@@ -48,6 +34,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={ props => <Layout> <Filter/> </Layout> }/>
               <Route exact path="/login" component={ Login }/>
+              <Route exact path="/registration" component={ Registration }/>
               {/* <Filter /> */}
     {/* Динамическая маршрутизаци */}
               {/* <ProductPage /> */}

@@ -35,7 +35,7 @@ class ModalWindow extends Component {
 
   
   componentDidMount() {
-    //setState users from LocalStprage
+    //setState users from LocalStorage
     let users = JSON.parse(localStorage.getItem("users"));
     if (!users) {
       this.setState({ users: [] });
@@ -152,7 +152,7 @@ class ModalWindow extends Component {
       wrongPassword = <p className="modal__warning">Password is not corect</p>;
     }
     if (!this.state.isLogin) {
-      loginSucses = <p className="modal__sucses">Accses is allowed...</p>;
+      loginSucses = <p className="modal__sucses">Accses allowed...</p>;
     }
 
     return (
