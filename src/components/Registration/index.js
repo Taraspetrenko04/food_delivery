@@ -29,6 +29,14 @@ class Registration extends Component {
       setPassword,
       setUsersList,
       history,
+
+      isValidName,
+      isValidEmail,
+      isValidPassword,
+
+      isNameValid,
+      isEmailValid,
+
     } = this.props;
 
 
@@ -73,7 +81,9 @@ class Registration extends Component {
 
 
     const RegistrSubmit = () => {
-      addNewUser();
+      isEmailValid();
+      console.log(isValidEmail)
+      // addNewUser();
       // setTimeout(redirectHomePage, 2000)
     }
 
@@ -125,7 +135,7 @@ class Registration extends Component {
             </button>
             <div className="login__page-input">Already registrated?</div>
             <div className="login__page-input">
-              <Link to="/login">LOGIN</Link>
+              <Link to="/login">Click to Login</Link>
             </div>
           </form>
         </div>
@@ -139,12 +149,14 @@ const mapStateToProps = state => {
     userName: state.login.userName,
     email: state.login.email,
     password: state.login.password,
-    users: state.login.users
+    users: state.login.users,
+    isValidName: state.login.isValidName,
+    isValidEmail: state.login.isValidEmail,
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  const { setName, setEmail, setPassword, setUsersList } = bindActionCreators(
+  const { setName, setEmail, setPassword, setUsersList, isNameValid,isEmailValid } = bindActionCreators(
     actions,
     dispatch
   );
@@ -152,7 +164,9 @@ const mapDispatchToProps = dispatch => {
     setName,
     setEmail,
     setPassword,
-    setUsersList
+    setUsersList,
+    isNameValid,
+    isEmailValid,
   };
 };
 

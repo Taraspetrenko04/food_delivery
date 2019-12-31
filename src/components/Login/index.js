@@ -62,7 +62,7 @@ class Login extends Component {
             </button>
             <div className="login__page-input">Not registrated yet?</div>
             <div className="login__page-input">
-              <Link to="/registration">REGISTRATION</Link>
+              <Link to="/registration">Click to Registeration</Link>
             </div>
           </form>
         </div>

@@ -34,3 +34,9 @@ export const setUsersList= users => {
     payload: users,
   };
 };
+
+// export const isInputValid = () => ({type: "IS_INPUT_VALID"});
+
+export const isNameValid = () => ({type: "IS_NAME_VALID"});
+export const isEmailValid = () => ({type: "IS_EMAIL_VALID"});
+export const isPasswordValid = () => ({type: "IS_PASSWORD_VALID"});
