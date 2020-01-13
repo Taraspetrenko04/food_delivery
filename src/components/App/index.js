@@ -14,6 +14,7 @@ import "../../index.css";
 
 //
 import { connect } from "react-redux"; //дает доступ к store
+import Logo from "../Logo";
 // import { bindActionCreators } from "redux";//bind action && dispatch
 // import * as actions from "../../storeTest/actionTest.js/index.js.js"; //импортируем все екшены(1) в bindActionCreator
 
@@ -25,14 +26,15 @@ class App extends Component {
 
     return (
       <Fragment>
-            {/* {backdrop} */}
+        {/* sideBar */}
             <BackDrop />
             <SideBar />
             
             <Header />
 
             <Switch>
-              <Route exact path="/" component={ props => <Layout> <Filter/> </Layout> }/>
+              {/* <Route exact path="/" component={ props => <Layout> <Filter/> </Layout> }/> */}
+              <Route exact path="/" component={ Layout } />
               <Route exact path="/login" component={ Login }/>
               <Route exact path="/registration" component={ Registration }/>
               {/* <Filter /> */}

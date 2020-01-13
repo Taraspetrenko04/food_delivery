@@ -4,13 +4,14 @@
 @media (min-width:1200px) {} */
 
 @media all and (min-width : 240px) {
-    .filter-wrapper{
+    .filter__wrapper{
+        margin-top: 80px;
         background-color: rgb(136, 129, 127);
         display: flex;
         width: 100%;
         height: 80px;
     }
-    .filter-wrapper ul{
+    .filter__wrapper ul{
         font-size: 0;
         display: flex;
         padding: 0px;
@@ -18,7 +19,7 @@
         /* border: 2px solid blueviolet */
     }
    
-    .filter-wrapper li{
+    .filter__wrapper li{
         display: flex;
         width: 25%;
         border-left: 1px solid rgb(24, 22, 22);
@@ -30,6 +31,12 @@
         color: rgb(255, 255, 255);
         border-left: 1px solid rgb(24, 22, 22);
         box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .filter__wrapper li:hover{
+        background-color: rgb(236, 222, 97);
+        color: gray;
     }
     
     li:nth-last-child(1){

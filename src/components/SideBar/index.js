@@ -10,13 +10,27 @@ const SideBar = props => {
   if (props.isMobileOpen) {
     sideBar = "side-bar__wrapper open";
   }
+
+  const logOut = () => {
+    let x = () => (props.sidebarMobileClose());
+    let y = () => (props.loggedOut());
+    x();
+    y();
+  }
+  let logged;
+  if (!props.isLogged) {
+    logged =  <li onClick={props.sidebarMobileClose}><Link to="/login">login</Link>
+</li>
+  }
+  
   return (
     <div className={sideBar}>
       <ul className="side-bar__list">
-        <li onClick={props.sidebarMobileClose}>
+        {/* <li onClick={props.sidebarMobileClose}>
           <Link to="/login">login</Link>
-        </li>
-        <li>logout</li>
+        </li> */}
+        {logged}
+        <li onClick={logOut}>logout</li>
       </ul>
     </div>
   );
@@ -24,14 +38,16 @@ const SideBar = props => {
 
 const mapStateToProps = state => {
   return {
-    isMobileOpen: state.login.isMobileOpen
+    isMobileOpen: state.login.isMobileOpen,
+    isLogged: state.login.isLogged,
   };
 };
 
 const mapDispatchToProps = dispatch => {
-  const { sidebarMobileClose } = bindActionCreators(actions, dispatch);
+  const { sidebarMobileClose, loggedOut, } = bindActionCreators(actions, dispatch);
   return {
-    sidebarMobileClose
+    sidebarMobileClose,
+    loggedOut,
   };
 };
 

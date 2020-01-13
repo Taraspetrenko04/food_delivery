@@ -17,7 +17,7 @@ export const logIn = (user) => {
     console.log('action: logIn')
     return {
         type: 'LOG_IN',
-        payload: user,//&&&&&&&&&&&&&&&&&&&&&&
+        payload: user,
     }
 }
 

@@ -1,10 +1,12 @@
-import { combineReducers } from 'redux'
-import modal from './modal'
-import login from './login'
+import { combineReducers } from 'redux';
+import modal from './modal';
+import login from './login';
+import items from './items';
 
 export default combineReducers({
   modal,
-  login
+  login,
+  items,
 })
 
 

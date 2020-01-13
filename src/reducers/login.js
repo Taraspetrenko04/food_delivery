@@ -3,9 +3,9 @@ const initialState = {
   email: '',
   password: '',
   userName: '',
-  isValidName: false,
-  isValidEmail: false,
-  isValidPassword: false,
+  isValidName: true,
+  isValidEmail: true,
+  isValidPassword: true,
   isLogged: false,
   users: [],
 };
@@ -55,46 +55,53 @@ const login = (state = initialState, action) => {
       };
 
 
-    case "IS_NAME_VALID":
-      // let mailCheck = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+.([A-Za-z]{2,4})$/i;
-      // let passwordCheck = /^[а-яіІїЇєЄА-ЯёЁa-zA-Z0-9]+$/;
-      let nameCheck = /^[а-яіІїЇєЄА-ЯёЁa-zA-Z0-9]+$/;
-      if (nameCheck.test(state.userName)) {
+
+      case "IS_NAME_VALID_TRUE":
+        return {
+                ...state,
+                isValidName: true,
+              };
+      case "IS_NAME_VALID_FALSE":
+        return {
+                ...state,
+                isValidName: false,
+              };
+
+
+      case "IS_EMAIL_VALID_TRUE":
+        return {
+                ...state,
+                isValidEmail: true,
+              };
+      case "IS_EMAIL_VALID_FALSE":
+        return {
+                ...state,
+                isValidEmail: false,
+              };
+
+              
+      case "IS_PASSWORD_VALID_TRUE":
+        return {
+                ...state,
+                isValidPassword: true,
+              };
+      case "IS_PASSWORD_VALID_FALSE":
+        return {
+                ...state,
+                isValidPassword: false,
+              };
+
+      case "LOGED-IN":
+        return {
+                ...state,
+                isLogged: true,
+              };
+      case "LOGED-OUT":
         return {
           ...state,
-          isValidName: true,
+          isLogged: false,
         };
-
-
-      } else {
-        return {
-          ...state,
-          isValidName: false,
-        };
-      }
-
-    case "IS_EMAIL_VALID":
-      let emailCheck = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+.([A-Za-z]{2,4})$/i;
-      // let emailCheck = /^[а-яіІїЇєЄА-ЯёЁa-zA-Z0-9]+$/;
-      if (emailCheck.test(state.email)) {
-        return {
-          ...state,
-          isValidEmail: true,
-        };
-
-
-      } else {
-        return {
-          ...state,
-          isValidEmail: false,
-        };
-      }
-
-
-
       
-
-
 
     default:
       return state;

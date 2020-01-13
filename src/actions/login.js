@@ -35,8 +35,15 @@ export const setUsersList= users => {
   };
 };
 
-// export const isInputValid = () => ({type: "IS_INPUT_VALID"});
 
-export const isNameValid = () => ({type: "IS_NAME_VALID"});
-export const isEmailValid = () => ({type: "IS_EMAIL_VALID"});
-export const isPasswordValid = () => ({type: "IS_PASSWORD_VALID"});
+export const isNameValidTrue = () => ({type: "IS_NAME_VALID_TRUE"});
+export const isNameValidFalse = () => ({type: "IS_NAME_VALID_FALSE"});
+
+export const isEmailValidTrue = () => ({type: "IS_EMAIL_VALID_TRUE"});
+export const isEmailValidFalse = () => ({type: "IS_EMAIL_VALID_FALSE"});
+
+export const isPasswordValidTrue = () => ({type: "IS_PASSWORD_VALID_TRUE"});
+export const isPasswordValidFalse = () => ({type: "IS_PASSWORD_VALID_FALSE"});
+
+export const loggedIn = () => ({type: "LOGED-IN"});
+export const loggedOut = () => ({type: "LOGED-OUT"});

@@ -6,9 +6,9 @@
 @media all and (min-width : 240px) {
     .layout{
         display: flex;
+        flex-direction: column;
         width: 100%;
-        height: 150px;
-        background-color: rgb(241, 203, 145);
+        background-color: rgb(233, 228, 221);
     }
 }
 @media (min-width:640px) and (max-width: 959px) {}

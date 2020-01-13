@@ -4,12 +4,9 @@
 @media (min-width:1200px) {} */
 
 @media all and (min-width : 240px) {
-    .footer{
-        width: 100%;
-        height: 50px;
-        background-color: darkgray;
-        /* background-image: url(../../pictures/11_Stethem.jpg); */
-        text-align: center;
+    .user__logged{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
     }
 }
 @media (min-width:640px) and (max-width: 959px) {}
