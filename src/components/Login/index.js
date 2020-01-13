@@ -82,12 +82,9 @@ class Login extends Component {
 
     const isMailExist = () => {
       let user = users.filter(user => user.email === email);
-      // console.log(user);
       if (user.length > 0) {
-        // alert("mail already exist");
         return true;
       } else {
-        // alert("mail DOES NOT exist");
         return false;
       }
     };

@@ -63,12 +63,35 @@ const initialState = {
 
 const items = (state = initialState, action) => {
   switch (action.type) {
+
+
     case "IS_LOADED":
       return {
         ...state,
         loading: true,
       };
 
+
+    case "SET_BY_CATEGORY":
+      const category = action.payload;
+      const newFoodList = initialState.food.filter(elem => {
+        return elem.category === category;
+      });
+      return {
+        ...state,
+        food: newFoodList,
+      };
+
+
+      case "SHOW_ALL_CATEGORIES":
+        if(state.food.length != initialState.food.length){
+          return {
+            ...state,
+            food: initialState.food,
+          };
+        }
+      
+      
     default:
       return state;
   }
