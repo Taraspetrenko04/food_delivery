@@ -11,7 +11,8 @@ import { bindActionCreators } from "redux";//bind action && dispatch
 import * as actions from "../../actions/items"; //импортируем все екшены(1) в bindActionCreator 
 
 class Header extends Component{
-        // sideBarToggleHandler = this.props;
+
+
         render(){
             const {isLogged, userName, showAllCategories} =this.props;
             let helloUser;
@@ -19,6 +20,8 @@ class Header extends Component{
             if (isLogged){
                 helloUser =  <UserLogged name={userName}/>
             }
+
+            
         return(
             <div className='header__wrapper' onClick={() => showAllCategories()}>
                 <MenuButton />

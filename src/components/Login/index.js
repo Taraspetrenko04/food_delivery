@@ -212,9 +212,7 @@ class Login extends Component {
               type="button"
               onClick={redirectHomePage}
             >
-              {/* <Link className="decor_none" to="/"> */}
               CANCEL
-              {/* </Link> */}
             </button>
             <div className="login__page-input">Not registrated yet?</div>
             <div className="login__page-input">

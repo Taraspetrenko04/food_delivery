@@ -2,11 +2,13 @@ import { combineReducers } from 'redux';
 import modal from './modal';
 import login from './login';
 import items from './items';
+import productCard from './productCard';
 
 export default combineReducers({
   modal,
   login,
   items,
+  productCard,
 })
 
 

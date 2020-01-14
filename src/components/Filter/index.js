@@ -16,10 +16,6 @@ class Filter extends Component {
         // this.focusTextInput = this.focusTextInput.bind(this);
     //   }
 
-   drink = 'drink';
-     
-
-
   render(){  
 
     const {setByCategory, } = this.props;

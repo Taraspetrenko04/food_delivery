@@ -3,27 +3,24 @@ import './style.css';
 import ProductItem from './../ProductItem';
 import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux"; //bind action && dispatch
-import * as actions from "../../actions/items";
+import * as actions from "../../actions";
 
 
 
 const ProductStore = (props) => {
-    const {loading, isLoaded, food} = props;     
-
-    // console.log(food);
-
+    const {food, cardLoaded, history} = props;     
     return(
-        <div className='product-store'>
-            <ul className='product-store__list'>
-               {food.map( (item) => {
-                   return(
-                  <li style={{border: 'none'}} key={item.id}><ProductItem item={item} /></li> 
-                   )
-               })
-            }
-            </ul>
-        </div>
-    )
+      <div className='product-store'>
+          <ul className='product-store__list'>
+             {food.map( (item) => {
+                 return(
+                <li style={{border: 'none'}} key={item.id}><ProductItem item={item} /></li> 
+                 )
+             })
+          }
+          </ul>
+      </div>
+  )
 }
 
 
@@ -31,14 +28,16 @@ const mapStateToProps = state => {
     return {
         loading: state.items.loading,
         food: state.items.food,
+        cardLoaded: state.productCard.cardLoaded,
     };
 };
 
 
 const mapDispatchToProps = dispatch => {
-    const { isLoaded, } = bindActionCreators(actions, dispatch);
+    const { isLoaded, isCardLoaded} = bindActionCreators(actions, dispatch);
     return {
       isLoaded,
+      isCardLoaded,
     };
   };
 

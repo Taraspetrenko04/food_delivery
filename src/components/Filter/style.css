@@ -16,7 +16,6 @@
         display: flex;
         padding: 0px;
         width: inherit;
-        /* border: 2px solid blueviolet */
     }
    
     .filter__wrapper li{
@@ -35,7 +34,8 @@
     }
 
     .filter__wrapper li:hover{
-        background-color: rgb(236, 222, 97);
+        /* background-color: rgb(236, 222, 97); */
+        background-color: rgb(247, 150, 150);
         color: gray;
     }
     
