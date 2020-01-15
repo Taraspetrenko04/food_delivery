@@ -35,11 +35,11 @@ class App extends Component {
               <Route exact path="/" component={ Layout } />
               <Route exact path="/login" component={ Login }/>
               <Route exact path="/registration" component={ Registration }/>
+              {/* <Route exact path="/products/1" component={ ProductCard }/> */}
 
 
               <Route exact path="/products/:id" 
                   render={ ( {match, history} ) =>{
-                    console.log(history);
                     const id = match.params.id
                     return <ProductCard  productId={id} /> 
                   } } 

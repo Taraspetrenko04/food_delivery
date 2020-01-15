@@ -4,17 +4,8 @@ import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux"; //bind action && dispatch
 import * as actions from "../../actions/items";
 
-
-//create component wich redirect to // category
-//set the filtered items
 class Filter extends Component {
-    
-    // constructor(props) {
-        // super(props);
-        // створимо реф, щоб отримати посилання на DOM-елемент поля введення
-        // this.tagName = React.createRef();
-        // this.focusTextInput = this.focusTextInput.bind(this);
-    //   }
+  
 
   render(){  
 

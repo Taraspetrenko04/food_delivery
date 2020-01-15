@@ -4,56 +4,56 @@ const initialState = {
       id: 1,
       title: "Pepsi",
       category: "drink",
-      picture: "images/pepsi.png",
+      picture: "/images/pepsi.png",
       price: 5
     },
     {
       id: 2,
       title: "Toscana",
       category: "pizza",
-      picture: "images/toskana.jpg",
+      picture: "/images/toskana.jpg",
       price: 15
     },
     {
       id: 3,
       title: "Big Burger",
       category: "burger",
-      picture: "images/bigMac.png",
+      picture: "/images/bigMac.png",
       price: 10
     },
     {
       id: 4,
       title: "Chicken salad",
       category: "salad",
-      picture: "images/chicken.png",
+      picture: "/images/chicken.png",
       price: 12
     },
     {
       id: 5,
       title: "Stella Artois",
       category: "drink",
-      picture: "images/stellaartois.jpg",
+      picture: "/images/stellaartois.jpg",
       price: 6
     },
     {
       id: 6,
       title: "Gavai pizza",
       category: "pizza",
-      picture: "images/gavai.jpg",
+      picture: "/images/gavai.jpg",
       price: 15
     },
     {
       id: 7,
       title: "Tasty Burger",
       category: "burger",
-      picture: "images/bigTasty.png",
+      picture: "/images/bigTasty.png",
       price: 8
     },
     {
       id: 8,
       title: "Vegato salad",
       category: "salad",
-      picture: "images/vegetable.png",
+      picture: "/images/vegetable.png",
       price: 9
     }
   ],
@@ -63,6 +63,12 @@ const initialState = {
 
 const items = (state = initialState, action) => {
   switch (action.type) {
+
+    case "IS_LOADED_FALSE":
+      return {
+        ...state,
+        loading: false,
+      };
 
 
     case "IS_LOADED":
@@ -84,7 +90,7 @@ const items = (state = initialState, action) => {
 
 
       case "SHOW_ALL_CATEGORIES":
-        if(state.food.length != initialState.food.length){
+        if(state.food.length !== initialState.food.length){
           return {
             ...state,
             food: initialState.food,
@@ -92,8 +98,7 @@ const items = (state = initialState, action) => {
         }
       
       
-    default:
-      return state;
+    default: return state;
   }
 };
 

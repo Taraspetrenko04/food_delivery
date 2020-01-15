@@ -4,6 +4,12 @@ export const isLoaded = () => {
     }
 };
 
+export const isLoadedFalse = () => {
+    return {
+        type: 'IS_LOADED_FALSE',
+    }
+};
+
 
 export const setByCategory = (category) => {
     return {

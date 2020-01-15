@@ -4,6 +4,7 @@
   100% { opacity: 0 }
 }
 .ldio-lorol8zh2ij div {
+
   left: 95px;
   top: 43px;
   position: absolute;
@@ -61,9 +62,10 @@
 .loadingio-spinner-spinner-y5wwe8fmwbh {
   width: 200px;
   height: 200px;
-  display: inline-block;
+  /* display: inline-block; */
   overflow: hidden;
-  background: #f1f2f3;
+  /* background: #f1f2f3; */
+  margin: 0 auto;
 }
 .ldio-lorol8zh2ij {
   width: 100%;
