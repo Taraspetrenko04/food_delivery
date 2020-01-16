@@ -1,1 +1,0 @@
-export const isCardLoaded = () => ({ type: "IS_CARD_LOADED" });

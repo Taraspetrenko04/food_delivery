@@ -8,7 +8,7 @@ import * as actions from "../../actions";
 
 
 const ProductStore = (props) => {
-    const {food, cardLoaded, history} = props;     
+    const {food, /*cardLoaded, history*/} = props;     
     return(
       <div className='product-store'>
           <ul className='product-store__list'>
@@ -28,7 +28,7 @@ const mapStateToProps = state => {
     return {
         loading: state.items.loading,
         food: state.items.food,
-        cardLoaded: state.productCard.cardLoaded,
+        // cardLoaded: state.productCard.cardLoaded,
     };
 };
 

@@ -9,6 +9,8 @@ import Login from '../Login';
 import Registration from '../Registration';
 import Footer from '../Footer';
 import "../../index.css";
+import ShoppingCard from "../ShopingCard"; 
+
 
 import { connect } from "react-redux"; //дает доступ к store
 
@@ -35,7 +37,7 @@ class App extends Component {
               <Route exact path="/" component={ Layout } />
               <Route exact path="/login" component={ Login }/>
               <Route exact path="/registration" component={ Registration }/>
-              {/* <Route exact path="/products/1" component={ ProductCard }/> */}
+              <Route exact path="/shopping-card" component={ ShoppingCard}/>
 
 
               <Route exact path="/products/:id" 

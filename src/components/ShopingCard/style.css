@@ -1,0 +1,29 @@
+/* @media all and (min-width : 240px) {}
+@media (min-width:640px) and (max-width: 959px) {}
+@media (min-width:960px) and (max-width: 1199px) {}
+@media (min-width:1200px) {} */
+
+
+@media all and (min-width : 240px) {
+    .shopping__card{
+        position: fixed;
+        top: 0;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color:  rgba(0, 0, 0, 0.5);
+        z-index: 500;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .shopping__card-store{
+        margin: auto auto;
+        width: 70%;
+        height: max-content;
+        background-color: seashell;
+        padding: 2% 2%;
+    }
+}
+@media (min-width:640px) and (max-width: 959px) {}
+@media (min-width:960px) and (max-width: 1199px) {}
+@media (min-width:1200px) {}

@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, /*useEffect*/ } from "react";
 import "./style.css";
 import { withRouter } from "react-router-dom"; //high order component
 import { connect } from "react-redux"; //get access to store
@@ -21,7 +21,7 @@ class ProductCard extends Component {
     this.timer = setTimeout(() => {
         // console.log('Hello, World!')
         isLoaded()}
-        , 2000)
+        , 1600)
   }
   
 
@@ -33,7 +33,7 @@ class ProductCard extends Component {
 
 
   render(){
-  const { productId, food, history, isLoaded, loading, isLoadedFalse } = this.props;
+  const { productId, food, history, /*isLoaded,*/ loading, /*isLoadedFalse*/ } = this.props;
 //   const { productId, food, history, isLoaded, loading } = props;
   const currentPoduct = food.find(elem => elem.id === +productId);
   const { title, price, picture } = currentPoduct;

@@ -4,9 +4,16 @@ import { withRouter } from 'react-router-dom';
 import AddToCard from './../AddToCard';
 
 const ProductItem = (props) => {
-    const { title, category, description, picture, price, history } = props.item;
+    const { title, category, picture, price, } = props.item;
     
-    const showProductCard = () => {props.history.push(`/products/${props.item.id}`)};
+    const showProductCard = (event) => {
+        if(event.target.className !== 'product-item__button'){
+            props.history.push(`/products/${props.item.id}`)
+        }else{
+            //action show cardlist  
+            console.log('redirec to cardList');
+        }
+    };
     
     
     return(

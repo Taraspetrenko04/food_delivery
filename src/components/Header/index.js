@@ -27,8 +27,14 @@ class Header extends Component{
                 <MenuButton />
                 <Logo />
                {helloUser}
-                {/* <Logo />
-                <Menu /> */}
+
+
+               <div className='header__card'>
+                 <i className="fas fa-shopping-basket header__card-text"></i>
+                 <p className="header__card-text">0</p>
+               </div>
+
+
             </div>
         )
     }
