@@ -1,9 +1,31 @@
 
 const initialState = {
-    order: [],
+    order: [
+      {
+        id: 1,
+        title: "Pepsi",
+        category: "drink",
+        picture: "/images/pepsi.png",
+        price: 5
+      },
+      {
+        id: 2,
+        title: "Toscana",
+        category: "pizza",
+        picture: "/images/toskana.jpg",
+        price: 15
+      },
+      {
+        id: 3,
+        title: "Big Burger",
+        category: "burger",
+        picture: "/images/bigMac.png",
+        price: 10
+      },
+    ],
     quantity: 0, //order.length
     visible: false,
-    totalPrice: 0
+    totalPrice: 30
   };
   
   
@@ -12,6 +34,7 @@ const initialState = {
 
 
       case "IS_SHOPPING_CARD_OPEN":
+        // console.log('reducer')
         return {
           ...state,
           visible: true,

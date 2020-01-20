@@ -8,20 +8,16 @@ import { bindActionCreators } from "redux"; //bind action && dispatch
 import * as actions from "../../actions/items";
 
 class ProductCard extends Component {
-// const ProductCard = props => {
-  // componentDidMount() {
-  //     const {isLoaded} = this.props;
-  // }
 
 
   timer = null;
   
+
   componentDidMount() {
     const {isLoaded, } = this.props;
     this.timer = setTimeout(() => {
-        // console.log('Hello, World!')
         isLoaded()}
-        , 1600)
+        , 1300)
   }
   
 
@@ -33,24 +29,15 @@ class ProductCard extends Component {
 
 
   render(){
-  const { productId, food, history, /*isLoaded,*/ loading, /*isLoadedFalse*/ } = this.props;
-//   const { productId, food, history, isLoaded, loading } = props;
+  const { productId, food, history, /*isLoaded,*/ loading,  /*isLoadedFalse*/ } = this.props;
+  
+  
   const currentPoduct = food.find(elem => elem.id === +productId);
-  const { title, price, picture } = currentPoduct;
+  const { title, price, picture, id } = currentPoduct;
+
+
   const redirectHome = () => history.push(`/`);
-
-
-//   settimeout for function
-//   useEffect(() => {
-//     const timer = setTimeout(() => {
-//       isLoaded();
-//       console.log("Timeout called!");
-//     }, 2000);
-//     return () => clearTimeout(timer);
-//   }, []);
-
-  // settimeout for class
-  //
+  
 
   let spinner = !loading ? <Spinner /> : null;
   let image = loading ? (
@@ -65,10 +52,9 @@ class ProductCard extends Component {
           {spinner}
           {image}
         </div>
-        {/* <img className='product__card-img' alt={title} src={picture}></img> */}
         <p className="product__card-price"> $ {price}</p>
         <div className="product__card-btn-wrapper">
-          <AddToCard />
+          <AddToCard id={id}/>
           <button
             className="product__card-btn"
             type="button"

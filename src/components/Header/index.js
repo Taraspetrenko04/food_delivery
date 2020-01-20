@@ -3,9 +3,7 @@ import './style.css';
 import MenuButton from '../MenuButton'
 import Logo from '../Logo';
 import UserLogged from '../UserLogged';
-// import Menu from './Menu';
-// import Modal from '../Modal'
-
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux";//bind action && dispatch
 import * as actions from "../../actions/items"; //импортируем все екшены(1) в bindActionCreator 
@@ -14,6 +12,10 @@ class Header extends Component{
 
 
         render(){
+          const { history } = this.props;
+          const goToProductCard = () => history.push(`/shopping-card`);
+
+
             const {isLogged, userName, showAllCategories} =this.props;
             let helloUser;
             
@@ -29,7 +31,7 @@ class Header extends Component{
                {helloUser}
 
 
-               <div className='header__card'>
+               <div className='header__card' onClick={goToProductCard}>
                  <i className="fas fa-shopping-basket header__card-text"></i>
                  <p className="header__card-text">0</p>
                </div>
@@ -59,5 +61,5 @@ const mapStateToProps = state => {
 ///ВЕРНУТЬ ВСЮ ЕДУ
 
   
-  export default connect(mapStateToProps, mapDispatchToProps)(Header); //коненкт оборачивает counter
+  export default withRouter( connect(mapStateToProps, mapDispatchToProps)(Header) ); //коненкт оборачивает counter
 // export default Header;

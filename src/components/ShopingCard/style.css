@@ -18,10 +18,34 @@
     }
     .shopping__card-store{
         margin: auto auto;
-        width: 70%;
+        width: 90%;
         height: max-content;
         background-color: seashell;
         padding: 2% 2%;
+    }
+
+    .shopping__card-title{
+        text-align: center;
+        font-size: 24px;
+        margin-top: 10px;
+        text-transform: uppercase;
+    }
+
+    .shopping__card-table{
+        border: 1px solid grey;
+        margin: 10px auto;
+        font-size: 19px;
+    }
+
+    .shopping__card-table-cell{
+        padding: 3px 3px;
+        border: 1px solid lawngreen;
+    }
+
+    .shopping__card-table-action{
+        padding: 3px 3px;
+        border: 1px solid red;
+        margin-left: 3px;
     }
 }
 @media (min-width:640px) and (max-width: 959px) {}

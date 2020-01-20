@@ -27,4 +27,16 @@ export const showAllCategories = () => {
 
 
 
+export const onAddedToCard = (id) => {
+    return {
+        type: 'ON_ADDED_TO_CARD',
+        payload: id,
+    }
+};
+
+
+
+
+
+
 

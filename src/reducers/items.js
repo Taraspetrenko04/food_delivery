@@ -57,7 +57,23 @@ const initialState = {
       price: 9
     }
   ],
-  loading: false
+  loading: false,
+  shoppingCard: [
+    // {
+    //   id: 1,
+    //   title: "Pepsi",
+    //   category: "drink",
+    //   picture: "/images/pepsi.png",
+    //   price: 5
+    // },
+    // {
+    //   id: 2,
+    //   title: "Toscana",
+    //   category: "pizza",
+    //   picture: "/images/toskana.jpg",
+    //   price: 15
+    // },
+  ]
 };
 
 
@@ -96,6 +112,27 @@ const items = (state = initialState, action) => {
             food: initialState.food,
           };
         }
+
+
+      case "ON_ADDED_TO_CARD":
+        const id = action.payload;
+        const selectedItem = state.food.find(item => item.id === +id);
+        console.log(selectedItem);
+        console.log(selectedItem.id);
+        // const {id, title, price} = selectedtItem;
+        const newItem = {
+            id: selectedItem.id,
+            title: selectedItem.title,
+            price: selectedItem.price,
+        }
+        // return state;
+          return {
+            ...state,
+            shoppingCard: 
+            [...state.shoppingCard,
+            newItem]
+          }
+        
       
       
     default: return state;

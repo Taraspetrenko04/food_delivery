@@ -14,9 +14,9 @@
     }
     .header__card{
         border: 1px solid grey;
-        padding: 5px 5px;
+        padding: 10px 10px;
         border-radius: 3px;
-        margin: 0 5px;
+        margin: 0 10px;
     }
     .header__card:hover{
         color:rgb(59, 57, 53);
