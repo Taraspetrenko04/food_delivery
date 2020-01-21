@@ -7,7 +7,7 @@ const ProductItem = (props) => {
     const { id, title, category, picture, price, } = props.item;
     const showProductCard = (event) => {
         if(event.target.className !== 'product-item__button'){
-            props.history.push(`/products/${props.item.id}`)
+            props.history.push(`/products/${id}`)
         }
     };
     

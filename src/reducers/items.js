@@ -115,23 +115,35 @@ const items = (state = initialState, action) => {
 
 
       case "ON_ADDED_TO_CARD":
-        const id = action.payload;
-        const selectedItem = state.food.find(item => item.id === +id);
-        console.log(selectedItem);
-        console.log(selectedItem.id);
-        // const {id, title, price} = selectedtItem;
-        const newItem = {
-            id: selectedItem.id,
-            title: selectedItem.title,
-            price: selectedItem.price,
-        }
-        // return state;
-          return {
+        if(action.payload){
+          let selectedId = action.payload;
+          let selectedItem = state.food.find(item => item.id === +selectedId);
+          console.log(selectedItem);
+        return {
             ...state,
             shoppingCard: 
             [...state.shoppingCard,
-            newItem]
+              selectedItem]
           }
+        }else{
+          return state;
+        }
+        
+        // console.log(selectedItem.id);
+        // const {id, title, price} = selectedtItem;
+        // const newItem = {
+        //     id: +selectedItem.id,
+        //     title: selectedItem.title,
+        //     price: selectedItem.price,
+        // }
+        // console.log(newItem)
+        // return state;
+          // return {
+          //   ...state,
+          //   shoppingCard: 
+          //   [...state.shoppingCard,
+          //     selectedItem]
+          // }
         
       
       

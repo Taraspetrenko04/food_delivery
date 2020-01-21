@@ -11,20 +11,23 @@ class ShoppingCard extends Component {
 
   render() {
 
-   const { shoppingCard, isShoppingCardOpen, quantity, totalPrice,
-     onIncreasItem,
+   const { 
+    onIncreasItem,
     onDecreasItem,
-    onDeleteItem,
-    history } = this.props;
+    onDeleteItem, 
+    shoppingCard,
+    food,
+    history,
+  } = this.props;
     
 
     const redirectHome = () => history.push(`/`);
 
-
+    console.log(shoppingCard);
+    console.log(food);
+    
    const renderRow = (item, index,) => {
     const {id, title, price,} = item;
-
-
     return (
       <tr key={id}>
         <th className="shopping__card-table-cell">{index+1}</th>
@@ -56,8 +59,6 @@ class ShoppingCard extends Component {
               </tr>
             </thead>
 
-            {/* <TableBody />  */}
-
             <tbody>
               {shoppingCard.map(renderRow)}
               {/* <RenderRow /> */}
@@ -65,11 +66,10 @@ class ShoppingCard extends Component {
           </table>
 
           <div className="total">
-            {/* Total: ${total} */}
-            Total: $ {totalPrice}
+            Total: $
           </div>
 
-          <button type="button" onClick={isShoppingCardOpen}>
+          <button type="button" >
             GET ORDER
           </button>
           <button type="button" onClick={redirectHome}>
@@ -84,7 +84,8 @@ class ShoppingCard extends Component {
 
 const mapStateToProps = state => {
   return {
-    shoppingCard: state.items.shoppingCard
+    shoppingCard: state.items.shoppingCard,
+    food: state.items.food,
   }
 }
 
@@ -93,7 +94,8 @@ const mapDispatchToProps = dispatch => {
   const {
     onIncreasItem,
     onDecreasItem,
-    onDeleteItem } = bindActionCreators(actions, dispatch);
+    onDeleteItem 
+    } = bindActionCreators(actions, dispatch);
   return {
     onIncreasItem: (id) => console.log("++++"),
     onDecreasItem: (id) => console.log("----"),

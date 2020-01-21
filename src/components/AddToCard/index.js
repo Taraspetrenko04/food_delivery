@@ -6,13 +6,17 @@ import * as actions from "../../actions/items";
 
 const AddToCard = (props) => {
     const {id, onAddedToCard} = props;  
+    // const { onAddedToCard } = props;  
 
 
-    const getId = (event) => onAddedToCard(event.target.id);
+    const getId = (event) => {
+      onAddedToCard( event.currentTarget.getAttribute('data-key') );
+    }
     
 
     return (
-        <button id={id} className='product-item__button' type='button' onClick={getId}>Add to card</button>
+        // <button id={id} className='product-item__button' type='button' onClick={getId}>Add to card</button>
+        <button key={id} data-key={id} className='product-item__button' type='button' onClick={getId}>Add to card</button>
     )
 };
 
