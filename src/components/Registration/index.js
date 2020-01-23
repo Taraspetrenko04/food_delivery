@@ -4,23 +4,42 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux"; //bind action && dispatch
 import * as actions from "../../actions/login.js";
-// import Spinner from "../Spinner";
+import Spinner from "../Spinner";
 
 class Registration extends Component {
 
+  timer = null;
 
   componentDidMount() { // get data from localStr & set it to State
-    const { setUsersList, setEmail, setPassword,isNameValidTrue, isEmailValidTrue, isPasswordValidTrue } = this.props;
+    const { 
+      setUsersList,
+      setEmail,
+      setPassword,
+      isNameValidTrue,
+      isEmailValidTrue,
+      isPasswordValidTrue,
+      setMessage,
+     } = this.props;
+    
+
     isNameValidTrue();
     isEmailValidTrue();
     isPasswordValidTrue();
-    
+    setMessage('');
     setEmail('');
     setPassword('');
     let usersList = JSON.parse(localStorage.getItem("users"));
     if (usersList) {
       setUsersList(usersList);
     }
+  }
+
+
+  componentWillUnmount(){
+    const {isLoadingTrue,
+      isLoadingFalse,} = this.props;
+      isLoadingFalse();
+      clearTimeout(this.timer);
   }
 
   render() {
@@ -47,7 +66,12 @@ class Registration extends Component {
       isEmailValidFalse,
       isPasswordValidTrue,
       isPasswordValidFalse,
-      loggedIn
+      loggedIn,
+      loading,
+      isLoadingTrue,
+      isLoadingFalse,
+      setMessage,
+      message,
     } = this.props;
 
     const setUserName = event => {
@@ -84,12 +108,14 @@ class Registration extends Component {
 
 
     const redirectHomePage = () => {
-      history.push("/");
+      isLoadingTrue();
+      this.timer = setTimeout( () => history.push("/"), 1300);
     };
 
 
     const redirectLoginPage = () => {
-      history.push("/login");
+      isLoadingTrue();
+      this.timer = setTimeout( () => history.push("/login"), 1300);
     };
 
 
@@ -138,19 +164,20 @@ class Registration extends Component {
     let wrongEmail = "";
     let wrongPassword = "";
     let emailExist = "";
+    let spinner = "";
+    let classForm = "";
     
 
     const RegistrSubmit = () => {
       if (isInputValid()) {
         if (isMailExist()) {
-          //FUNCTION
-          alert('email already exist, just log-in login');
+          setMessage('This E-mail already exist, just log-in plese');
           redirectLoginPage();
         }else{
           addNewUser();
           loggedIn();
-            //FUNCTION (you registrated succesfully)
-          setTimeout(redirectHomePage, 1500)
+          setMessage('You have succesfully registrated');
+          redirectHomePage();
         }
       }
     };
@@ -168,18 +195,19 @@ class Registration extends Component {
         <p className="login__page-invalid">Password is not valid</p>
     }
 
+
+    spinner = loading ? <Spinner /> : null;
+    classForm = !loading ? "login__page-form" : "login__page-form hide";
+
+
     return (
       <div className="login__page">
         <div className="login__page-modal">
+        <p className="login__page-title message">{message}</p>
+          {spinner}
+        
+          <form className={classForm}>
           <p className="login__page-title">Registration PAGE</p>
-          {emailExist}
-
-          {/* <div className='spinner-container'>
-          <div>E-Mail already exist</div>
-          <Spinner />
-          </div> */}
-
-          <form className="login__page-form">
             <input
               className="login__page-input"
               name="name"
@@ -226,8 +254,9 @@ class Registration extends Component {
               {/* </Link> */}
             </button>
             <div className="login__page-input">Already registrated?</div>
-            <div className="login__page-input">
-              <Link to="/login">Click to Login</Link>
+            <div className="login__page-input underline" onClick={redirectLoginPage}>
+              {/* <Link to="/login">Click to Login</Link> */}
+              Click to Login
             </div>
           </form>
         </div>
@@ -246,6 +275,8 @@ const mapStateToProps = state => {
     isValidEmail: state.login.isValidEmail,
     isValidPassword: state.login.isValidPassword,
     isLogged: state.login.isLogged,
+    loading: state.login.loading,
+    message: state.login.message,
   };
 };
 
@@ -262,7 +293,11 @@ const mapDispatchToProps = dispatch => {
     isPasswordValidTrue,
     isPasswordValidFalse,
     loggedIn,
+    setMessage,
+    isLoadingTrue,
+    isLoadingFalse,
   } = bindActionCreators(actions, dispatch);
+
   return {
     setName,
     setEmail,
@@ -278,7 +313,10 @@ const mapDispatchToProps = dispatch => {
     isPasswordValidTrue,
     isPasswordValidFalse,
 
-    loggedIn
+    loggedIn,
+    setMessage,
+    isLoadingTrue,
+    isLoadingFalse
   };
 };
 

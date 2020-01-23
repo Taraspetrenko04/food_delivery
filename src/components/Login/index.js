@@ -8,9 +8,6 @@ import Spinner from "../Spinner";
 
 class Login extends Component {
 
-  
-
-  
     timer = null;
 
     componentDidMount() { // get data from localStr & set it to State
@@ -164,6 +161,7 @@ class Login extends Component {
 
     const loginSubmit = () => {
 
+
       if ( isInputValid() ){
         // console.log('valid');
 
@@ -215,10 +213,13 @@ class Login extends Component {
     return (
       <div className="login__page">
         <div className="login__page-modal">
-          <p className="login__page-title">LOGIN PAGE</p>
-          <p className="login__page-title message">{message}</p>
+          
+        <p className="login__page-title message">{message}</p>
           {spinner}
+          
+          
           <form className={classForm}>
+          <p className="login__page-title">LOGIN PAGE</p>
             <input
               className="login__page-input"
               name="email"

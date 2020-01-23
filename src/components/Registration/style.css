@@ -55,6 +55,18 @@
         align-items: center;
         justify-content: center;
     }
+    .underline{
+        color: blueviolet;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .login__page-form.hide{
+        display: none;
+    }
+    .login__page-title.message{
+        color: rgb(81, 170, 53);
+        font-weight: bolder;
+    }
 }
 @media (min-width:640px) and (max-width: 959px) {}
 @media (min-width:960px) and (max-width: 1199px) {}

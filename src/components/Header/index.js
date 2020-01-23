@@ -33,7 +33,7 @@ class Header extends Component{
 
                <div className='header__card' onClick={goToProductCard}>
                  <i className="fas fa-shopping-basket header__card-text"></i>
-                <p className="header__card-text">{orderTotal}</p>
+                <p className="header__card-text">${orderTotal}</p>
                </div>
 
 
