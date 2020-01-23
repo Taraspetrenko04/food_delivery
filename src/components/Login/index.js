@@ -1,31 +1,47 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux"; //bind action && dispatch
 import * as actions from "../../actions/login";
+import Spinner from "../Spinner";
 
 class Login extends Component {
+
   
+
+  
+    timer = null;
 
     componentDidMount() { // get data from localStr & set it to State
       const { setUsersList,
         isEmailValidTrue,
         isPasswordValidTrue,
         setEmail,
-        setPassword } = this.props;
+        setPassword,setMessage
+       } = this.props;
+
+
         isEmailValidTrue();
         isPasswordValidTrue();
 
+      setMessage('');
       setEmail('');
       setPassword('');
 
-      // isEmailValidFalse();
-      // isPasswordValidFalse();//use component willUnmount;
+      
       let usersList = JSON.parse(localStorage.getItem("users"));
       if (usersList) {
         setUsersList(usersList);
       }
+    }
+
+    
+    componentWillUnmount(){
+      const {isLoadingTrue,
+        isLoadingFalse,} = this.props;
+        isLoadingFalse();
+        clearTimeout(this.timer);
     }
 
 
@@ -38,6 +54,7 @@ class Login extends Component {
       setName,
       setEmail,
       setPassword,
+      loading,
       // setUsersList,
       history,//for links
       // isLogged,
@@ -53,17 +70,31 @@ class Login extends Component {
       isEmailValidFalse,
       isPasswordValidTrue,
       isPasswordValidFalse,
-      loggedIn
+      isLoadingTrue,
+      loggedIn,
+      setMessage,
+      message,
     } = this.props;
 
 
+   
+
+
     const redirectHomePage = () => {
-      history.push("/");
+      isLoadingTrue();
+      this.timer = setTimeout( () => 
+      history.push("/")
+      , 1300 )
     };
 
+
     const redirectRegistrationPage = () => {
-      history.push("/registration");
+      isLoadingTrue();
+      this.timer = setTimeout( () => 
+      history.push("/registration")
+      , 1300 )
     };
+
 
 
     const setUserEmail = event => {
@@ -127,6 +158,8 @@ class Login extends Component {
 
     let wrongEmail = "";
     let wrongPassword = "";
+    let spinner = "";
+    let classForm = "";
 
 
     const loginSubmit = () => {
@@ -136,25 +169,26 @@ class Login extends Component {
 
 
         if( isMailExist() ) {
-            //  console.log('email exits')
 
 
             if ( isPasswordCorrect() ){
               //set userName
               loggedIn();//set logget true
+              setMessage("Access allowed :)");
               redirectHomePage();//redirect to home page
-              alert('passsword corrcet');
+              
               return 
             }else{
                 //set state inValid pasword
-                return alert('passsword INCORRECT');
+                isPasswordValidFalse();
             }
 
 
         }
         else{
-          alert(`Registr please`);
-          redirectRegistrationPage()
+          ///mesageCreator
+          setMessage("You are not registrated yet, SingUp please");
+          redirectRegistrationPage();
         }
 
 
@@ -173,11 +207,18 @@ class Login extends Component {
         <p className="login__page-invalid">Password is not valid</p>
     }
 
+
+    spinner = loading ? <Spinner /> : null;
+    classForm = !loading ? "login__page-form" : "login__page-form hide";
+    
+
     return (
       <div className="login__page">
         <div className="login__page-modal">
           <p className="login__page-title">LOGIN PAGE</p>
-          <form className="login__page-form">
+          <p className="login__page-title message">{message}</p>
+          {spinner}
+          <form className={classForm}>
             <input
               className="login__page-input"
               name="email"
@@ -215,10 +256,10 @@ class Login extends Component {
               CANCEL
             </button>
             <div className="login__page-input">Not registrated yet?</div>
-            <div className="login__page-input">
-              <Link to="/registration">Click to Registeration</Link>
+            <div className="login__page-input underline" onClick={redirectRegistrationPage}>
+              Click to Registeration
             </div>
-          </form>
+          </form> 
         </div>
       </div>
     );
@@ -236,6 +277,8 @@ const mapStateToProps = state => {
     isValidEmail: state.login.isValidEmail,
     isValidPassword: state.login.isValidPassword,
     isLogged: state.login.isLogged,
+    loading: state.login.loading,
+    message: state.login.message
   };
 };
 
@@ -251,7 +294,11 @@ const mapDispatchToProps = dispatch => {
           isEmailValidFalse,
           isPasswordValidTrue,
           isPasswordValidFalse,
-          loggedIn, } = bindActionCreators(actions, dispatch);
+          loggedIn,
+          isLoadingTrue,
+          isLoadingFalse,
+          setMessage,
+        }  = bindActionCreators(actions, dispatch);
   return {
     sidebarMobileClose,
     setName,
@@ -268,8 +315,14 @@ const mapDispatchToProps = dispatch => {
     isPasswordValidTrue,
     isPasswordValidFalse,
 
-    loggedIn
+    loggedIn,
+
+    isLoadingTrue,
+    isLoadingFalse,
+    setMessage,
   };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);
+
+

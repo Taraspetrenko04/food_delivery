@@ -8,6 +8,8 @@ const initialState = {
   isValidPassword: true,
   isLogged: false,
   users: [],
+  loading: false,
+  message: '',
 };
 
 
@@ -100,6 +102,26 @@ const login = (state = initialState, action) => {
         return {
           ...state,
           isLogged: false,
+        };
+
+
+        case "IS_LOADING_TRUE":
+        return {
+          ...state,
+          loading: true,
+        };
+
+        case "IS_LOADING_FALSE":
+        return {
+          ...state,
+          loading: false,
+        };
+
+
+        case "SET_MESSAGE":
+        return {
+          ...state,
+          message: action.payload,
         };
       
 

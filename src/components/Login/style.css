@@ -31,6 +31,7 @@
 
     .login__page-form{
         display: flex;
+        /* display: none; */
         flex-direction: column;
         margin-top: 10px;
     }
@@ -43,6 +44,19 @@
     .decor_none{
         text-decoration: none;
         color: inherit;
+    }
+
+    .underline{
+        color: blueviolet;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    .login__page-form.hide{
+        display: none;
+    }
+    .login__page-title.message{
+        color: rgb(81, 170, 53);
+        font-weight: bolder;
     }
 }
 @media (min-width:640px) and (max-width: 959px) {}

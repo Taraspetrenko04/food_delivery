@@ -82,21 +82,22 @@ class Registration extends Component {
       return setUsersList(newUsersList);
     };
 
+
     const redirectHomePage = () => {
       history.push("/");
     };
+
+
     const redirectLoginPage = () => {
       history.push("/login");
     };
 
+
     const isMailExist = () => {
       let user = users.filter(user => user.email === email);
-      // console.log(user);
       if (user.length > 0) {
-        // alert("mail already exist");
         return true;
       } else {
-        // alert("mail DOES NOT exist");
         return false;
       }
     };
@@ -107,6 +108,7 @@ class Registration extends Component {
       let emailCheck = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+.([A-Za-z]{2,4})$/i;
       let passwordCheck = /^[а-яіІїЇєЄА-ЯёЁa-zA-Z0-9]+$/;
 
+      
       if (nameCheck.test(userName)) {
         isNameValidTrue();
         n = true;
@@ -135,24 +137,21 @@ class Registration extends Component {
     let wrongName = "";
     let wrongEmail = "";
     let wrongPassword = "";
-    // let loginSucses = "";
     let emailExist = "";
     
+
     const RegistrSubmit = () => {
       if (isInputValid()) {
         if (isMailExist()) {
-          alert('email already exist, login');
+          //FUNCTION
+          alert('email already exist, just log-in login');
           redirectLoginPage();
         }else{
           addNewUser();
           loggedIn();
+            //FUNCTION (you registrated succesfully)
           setTimeout(redirectHomePage, 1500)
         }
-        //проверка на наличчие имейла
-        //или редирект на login или
-
-        //добавление юзера
-        //вход и редирект на / 
       }
     };
 

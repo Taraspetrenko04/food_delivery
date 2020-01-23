@@ -44,6 +44,7 @@ class ProductCard extends Component {
     <img className="product__card-img" alt={title} src={picture}></img>
   ) : null;
 
+  
   return (
     <div className="product__card">
       <div className="product__card-box">

@@ -39,11 +39,28 @@ export const setUsersList= users => {
 export const isNameValidTrue = () => ({type: "IS_NAME_VALID_TRUE"});
 export const isNameValidFalse = () => ({type: "IS_NAME_VALID_FALSE"});
 
+
 export const isEmailValidTrue = () => ({type: "IS_EMAIL_VALID_TRUE"});
 export const isEmailValidFalse = () => ({type: "IS_EMAIL_VALID_FALSE"});
+
 
 export const isPasswordValidTrue = () => ({type: "IS_PASSWORD_VALID_TRUE"});
 export const isPasswordValidFalse = () => ({type: "IS_PASSWORD_VALID_FALSE"});
 
+
 export const loggedIn = () => ({type: "LOGED-IN"});
 export const loggedOut = () => ({type: "LOGED-OUT"});
+
+
+export const isLoadingTrue = () => ({type: "IS_LOADING_TRUE"});
+export const isLoadingFalse = () => ({type: "IS_LOADING_FALSE"});
+
+
+export const setMessage = message => {
+  return {
+    type: "SET_MESSAGE",
+    payload: message,
+  };
+};
+
+
