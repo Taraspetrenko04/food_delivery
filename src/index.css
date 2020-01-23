@@ -1,5 +1,22 @@
-.container{
-    width: 1200px;
-    margin: 0 auto;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+/* @media all and (min-width : 240px) {}
+@media (min-width:640px) and (max-width: 959px) {}
+@media (min-width:960px) and (max-width: 1199px) {}
+@media (min-width:1200px) {} */
+
+@media all and (min-width : 240px) {
+    .container{
+        max-width: 100%;
+        font-family: Verdana, Tahoma, sans-serif;
+    }
+}
+@media (min-width:640px) and (max-width: 959px) {}
+@media (min-width:960px) and (max-width: 1199px) {
+}
+@media (min-width:1200px) {
+    .container{
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: Verdana, Tahoma, sans-serif;
+        height: 100%;
+    }
 }

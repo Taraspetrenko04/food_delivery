@@ -4,10 +4,9 @@ import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux"; //bind action && dispatch
 import * as actions from "../../actions/login"; //импортируем все екшены(1) в bindActionCreator
 
-// sidebarMobileHandler
+
 const MenuButton = props => {
   return (
-    // <div className='menu-button' onClick={props.click.sideBarToggleHandler}>
     <div className="menu-button" onClick={props.sidebarMobileOpen}>
       <i className="fas fa-bars"></i>
     </div>

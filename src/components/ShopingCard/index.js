@@ -25,6 +25,7 @@ class ShoppingCard extends Component {
 
     const redirectHome = () => history.push(`/`);
 
+
     
    const renderRow = (item, index,) => {
     const {id, title, count, total,} = item;

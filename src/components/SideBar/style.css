@@ -24,8 +24,8 @@
     .side-bar__wrapper.open{
         transform: translateX(0);
     }
-    .side-bar__wrapper ul{
-    }
+    /* .side-bar__wrapper ul{
+    } */
 
     .side-bar__wrapper li{
         border: 1px solid black;
@@ -42,5 +42,9 @@
 
 @media (min-width:640px) and (max-width: 959px) {}
 @media (min-width:960px) and (max-width: 1199px) {}
-@media (min-width:1200px) {}
+@media (min-width:1200px) {
+    .side-bar__wrapper{
+        display: none;
+    }
+}
 

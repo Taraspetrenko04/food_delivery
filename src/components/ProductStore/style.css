@@ -7,7 +7,7 @@
     .product-store{
         width: 100%;
         background-color: #dee9e9;
-        height: 600px;
+        height: fit-content;
         overflow: auto;
     }
 

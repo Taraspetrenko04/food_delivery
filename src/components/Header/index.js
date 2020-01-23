@@ -59,8 +59,6 @@ const mapStateToProps = state => {
     };
   };
 
-///ВЕРНУТЬ ВСЮ ЕДУ
-
   
   export default withRouter( connect(mapStateToProps, mapDispatchToProps)(Header) ); //коненкт оборачивает counter
 // export default Header;

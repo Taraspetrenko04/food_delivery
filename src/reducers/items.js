@@ -1,4 +1,4 @@
-const initialState = {
+ const initialState = {
   food: [
     {
       id: 1,
@@ -77,15 +77,23 @@ const initialState = {
   orderTotal: 0
 };
 
+const updateOrderTotal = (shoppingCard) => {
+  let newOrderTotal = shoppingCard.reduce( (prev, item) => prev + item.total, 0)
+  return newOrderTotal;
+} 
+
+
 const updateShoppingCard = (shoppingCard, newItem, index) => {
   if (newItem.count === 0) {
     return [...shoppingCard.slice(0, index), 
       ...shoppingCard.slice(index + 1)];
   }
 
+
   if (index === -1) {
     return [...shoppingCard, newItem];
   }
+
 
   return [
     ...shoppingCard.slice(0, index),
@@ -116,13 +124,20 @@ const updateOrder = (state, id, quantity) => {
   const index = shoppingCard.findIndex(item => item.id === selectedItem.id);
   const item = shoppingCard[index];
 
+
   const newItem = updateCartItem(selectedItem, item, quantity);
+  const newShoppingCard = updateShoppingCard(shoppingCard, newItem, index);
+  const newOrderTotal = updateOrderTotal(newShoppingCard); 
+ 
 
   return {
     ...state,
-    shoppingCard: updateShoppingCard(shoppingCard, newItem, index)
+    shoppingCard: newShoppingCard,
+    orderTotal: newOrderTotal,
   };
 };
+
+
 
 const items = (state = initialState, action) => {
   switch (action.type) {
@@ -173,61 +188,7 @@ const items = (state = initialState, action) => {
         );
         return updateOrder(state, action.payload, -item.count);
       }
-    // case "ON_ADDED_TO_CARD":
-    //   if(action.payload){
-    //     const selectedId = action.payload;
-    //     const selectedItem = state.food.find(item => item.id === +selectedId);
-    //     const index = state.shoppingCard.findIndex(item => item.id === selectedItem.id);
-    //     const item = state.shoppingCard[index];
-    //     let newItem;
-
-    //     newItem = updateCartItem(selectedItem, item);
-
-    //     return {
-    //       ...state,
-    //       shoppingCard: updateShoppingCard (state.shoppingCard, newItem, index)
-    //     };
-
-    //   }
-
-    /* if(index >= 0){
-             const {id, title, count, total} = state.shoppingCard[index];
-            newItem = {
-                        id,
-                        title,
-                        count: count + 1,
-                        total: total + price,
-                      }
-            return {
-              ...state,
-              shoppingCard: 
-              [...state.shoppingCard.slice(0, index),
-                newItem,
-              ...state.shoppingCard.slice( (index + 1) )]
-            }
-
-
-          }else{
-            console.log('create new elem')
-             newItem = {
-              id,
-              title,
-              count: 1,
-              total: price
-            }
-            return {
-              ...state,
-              shoppingCard: 
-              [...state.shoppingCard,
-                newItem]
-            }
-          }
-          
-       
-        }
-        else{
-          return state;
-        }*/
+    
 
     default:
       return state;
