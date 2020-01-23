@@ -12,32 +12,32 @@ class ShoppingCard extends Component {
   render() {
 
    const { 
-    onIncreasItem,
+    onAddedToCard,
+    // onIncreasItem,
     onDecreasItem,
     onDeleteItem, 
     shoppingCard,
-    food,
+    // food,
     history,
+    orderTotal,
   } = this.props;
     
 
     const redirectHome = () => history.push(`/`);
 
-    console.log(shoppingCard);
-    console.log(food);
     
    const renderRow = (item, index,) => {
-    const {id, title, price,} = item;
+    const {id, title, count, total,} = item;
     return (
       <tr key={id}>
         <th className="shopping__card-table-cell">{index+1}</th>
-        <th className="shopping__card-table-cell">{title}</th>
-        <th className="shopping__card-table-cell">1</th>
-        <th className="shopping__card-table-cell">{price}</th>
+        <th className="shopping__card-table-cell">  {title}</th>
+        <th className="shopping__card-table-cell">{count}</th>
+        <th className="shopping__card-table-cell">$ {total}</th>
         <th className="shopping__card-table-cell">
-          <i className="fas fa-plus-circle shopping__card-table-action" onClick={onIncreasItem}></i>
-          <i className="fas fa-minus-circle shopping__card-table-action" onClick={onDecreasItem}></i>
-          <i className="fas fa-trash-alt shopping__card-table-action" onClick={onDeleteItem}></i>
+          <i className="fas fa-plus-circle shopping__card-table-action" onClick={() => onAddedToCard(id)}></i>
+          <i className="fas fa-minus-circle shopping__card-table-action" onClick={() => onDecreasItem(id)}></i>
+          <i className="fas fa-trash-alt shopping__card-table-action" onClick={() => onDeleteItem(id)}></i>
         </th>
       </tr>
     );
@@ -66,7 +66,7 @@ class ShoppingCard extends Component {
           </table>
 
           <div className="total">
-            Total: $
+            Order Total: $ {orderTotal}
           </div>
 
           <button type="button" >
@@ -86,20 +86,23 @@ const mapStateToProps = state => {
   return {
     shoppingCard: state.items.shoppingCard,
     food: state.items.food,
+    orderTotal: state.items.orderTotal,
   }
 }
 
 
 const mapDispatchToProps = dispatch => {
   const {
-    onIncreasItem,
+    onAddedToCard,
+    // onIncreasItem,
     onDecreasItem,
     onDeleteItem 
     } = bindActionCreators(actions, dispatch);
   return {
-    onIncreasItem: (id) => console.log("++++"),
-    onDecreasItem: (id) => console.log("----"),
-    onDeleteItem: (id) => console.log("DELETE"),
+    onAddedToCard,
+    // onIncreasItem,
+    onDecreasItem,
+    onDeleteItem,
   }
 }
 

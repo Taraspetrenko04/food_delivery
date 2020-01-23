@@ -35,6 +35,30 @@ export const onAddedToCard = (id) => {
 };
 
 
+// export const onIncreasItem = (id) => {
+//     return {
+//         type: 'ON_INCREAS_ITEM',
+//         payload: id,
+//     }
+// }
+
+
+export const onDecreasItem = (id) => {
+    return {
+        type: 'ON_DECREASE_ITEM',
+        payload: id,
+    }
+}
+
+
+export const onDeleteItem = (id) => {
+    return {
+        type: 'ON_DELETE_ITEM',
+        payload: id,
+    }
+}
+    
+     
 
 
 

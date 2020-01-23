@@ -12,7 +12,7 @@ class Header extends Component{
 
 
         render(){
-          const { history } = this.props;
+          const { history, orderTotal } = this.props;
           const goToProductCard = () => history.push(`/shopping-card`);
 
 
@@ -33,7 +33,7 @@ class Header extends Component{
 
                <div className='header__card' onClick={goToProductCard}>
                  <i className="fas fa-shopping-basket header__card-text"></i>
-                 <p className="header__card-text">0</p>
+                <p className="header__card-text">{orderTotal}</p>
                </div>
 
 
@@ -47,6 +47,7 @@ const mapStateToProps = state => {
     return {
       userName: state.login.userName,
       isLogged: state.login.isLogged,
+      orderTotal: state.items.orderTotal
     };
   };
 
