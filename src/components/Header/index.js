@@ -7,6 +7,8 @@ import { withRouter } from "react-router-dom";
 import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux";//bind action && dispatch
 import * as actions from "../../actions/items"; //импортируем все екшены(1) в bindActionCreator 
+import SideBar from "../SideBar";
+
 
 class Header extends Component{
 
@@ -28,6 +30,7 @@ class Header extends Component{
             <div className='header__wrapper' onClick={() => showAllCategories()}>
                 <MenuButton />
                 <Logo />
+                {/* <SideBar /> */}
                {helloUser}
 
 

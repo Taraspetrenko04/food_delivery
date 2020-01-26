@@ -7,8 +7,19 @@
     .user__logged{
         font-family: Arial, Helvetica, sans-serif;
         font-size: 12px;
+        margin: 0 5px;
     }
 }
 @media (min-width:640px) and (max-width: 959px) {}
 @media (min-width:960px) and (max-width: 1199px) {}
-@media (min-width:1200px) {}
+@media (min-width:1200px) {
+    .user__logged{
+        font-family: Arial, Helvetica, sans-serif;
+        border: 1px solid black;
+        padding: 10px 10px;
+        border-radius: 5px;
+        text-align: center;
+        margin-left: 25px;
+        font-size: 20px;
+    }
+}

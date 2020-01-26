@@ -5,6 +5,8 @@ import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux"; //bind action && dispatch
 import * as actions from "../../actions/login"; //импортируем все екшены(1) в bindActionCreator
 
+
+
 const SideBar = props => {
   let sideBar = "side-bar__wrapper";
   if (props.isMobileOpen) {
@@ -17,7 +19,7 @@ const SideBar = props => {
     x();
     y();
   }
-  let logged;
+  let logged = null;
   if (!props.isLogged) {
     logged =  <li onClick={props.sidebarMobileClose}><Link to="/login">login</Link>
 </li>
@@ -26,9 +28,6 @@ const SideBar = props => {
   return (
     <div className={sideBar}>
       <ul className="side-bar__list">
-        {/* <li onClick={props.sidebarMobileClose}>
-          <Link to="/login">login</Link>
-        </li> */}
         {logged}
         <li onClick={logOut}>logout</li>
       </ul>
