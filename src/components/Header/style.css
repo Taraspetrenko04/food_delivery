@@ -4,6 +4,7 @@
 @media (min-width:1200px) {} */
 @media all and (min-width : 240px) {
     .header__wrapper {
+        z-index: 1000;
         position: fixed;
         background-color: rgb(54, 52, 52);
         width: 100%;
@@ -51,5 +52,9 @@
         background-color: rgb(54, 52, 52);
         width: 1200px;
         margin: 0 auto;
+    }
+
+    .header__card{
+        cursor: pointer;
     }
 }
