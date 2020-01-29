@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react";
 import {Switch, Route} from 'react-router-dom';
+import { BrowserRouter as Router } from "react-router-dom";
 import Header from "../Header";
 import SideBar from "../SideBar";
 import BackDrop from "../BackDrop/";
@@ -26,6 +27,7 @@ class App extends Component {
 
     return (
       <Fragment>
+      
             <BackDrop />
             <SideBar />
             
@@ -54,7 +56,6 @@ class App extends Component {
 
 
             <Footer />
-
                   
       </Fragment>
     );
@@ -62,7 +63,6 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  // console.log('mapStateToProps');
   return {
     state: state
   };
