@@ -13,7 +13,7 @@
         border-right: 2px solid rgba(99, 89, 89, 0.4);
         box-shadow: 2px 0px 0px 0px rgba(255, 255, 255, 0.2);
         box-sizing: border-box;
-        z-index: 200;
+        z-index: 1200;
         display: flex;
         justify-content: center;
         align-items: center;

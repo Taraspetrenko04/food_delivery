@@ -30,15 +30,15 @@ class ShoppingCard extends Component {
    const renderRow = (item, index,) => {
     const {id, title, count, total,} = item;
     return (
-      <tr key={id}>
+      <tr  key={id}>
         <th className="shopping__card-table-cell">{index+1}</th>
         <th className="shopping__card-table-cell">  {title}</th>
         <th className="shopping__card-table-cell">{count}</th>
         <th className="shopping__card-table-cell">$ {total}</th>
         <th className="shopping__card-table-cell">
-          <i className="fas fa-plus-circle shopping__card-table-action" onClick={() => onAddedToCard(id)}></i>
-          <i className="fas fa-minus-circle shopping__card-table-action" onClick={() => onDecreasItem(id)}></i>
-          <i className="fas fa-trash-alt shopping__card-table-action" onClick={() => onDeleteItem(id)}></i>
+          <i className="fas fa-plus-circle shopping__card-table-action plus" onClick={() => onAddedToCard(id)}></i>
+          <i className="fas fa-minus-circle shopping__card-table-action minus" onClick={() => onDecreasItem(id)}></i>
+          <i className="fas fa-trash-alt shopping__card-table-action delete" onClick={() => onDeleteItem(id)}></i>
         </th>
       </tr>
     );
