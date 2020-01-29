@@ -3,6 +3,10 @@ import "./style.css";
 import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux"; //bind action && dispatch
 import * as actions from "../../actions/items";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -36,9 +40,12 @@ class ShoppingCard extends Component {
         <th className="shopping__card-table-cell">{count}</th>
         <th className="shopping__card-table-cell">$ {total}</th>
         <th className="shopping__card-table-cell">
-          <i className="fas fa-plus-circle shopping__card-table-action plus" onClick={() => onAddedToCard(id)}></i>
-          <i className="fas fa-minus-circle shopping__card-table-action minus" onClick={() => onDecreasItem(id)}></i>
-          <i className="fas fa-trash-alt shopping__card-table-action delete" onClick={() => onDeleteItem(id)}></i>
+          <FontAwesomeIcon  className="shopping__card-table-action plus" onClick={() => onAddedToCard(id)} icon={faPlusCircle} />
+          <FontAwesomeIcon  className="shopping__card-table-action minus" onClick={() => onDecreasItem(id)} icon={faMinusCircle} />
+          <FontAwesomeIcon  className="shopping__card-table-action delete" onClick={() => onDeleteItem(id)} icon={faTrashAlt} />
+          {/* <i className="fas fa-plus-circle shopping__card-table-action plus" onClick={() => onAddedToCard(id)}></i> */}
+          {/* <i className="fas fa-minus-circle shopping__card-table-action minus" onClick={() => onDecreasItem(id)}></i>
+          <i className="fas fa-trash-alt shopping__card-table-action delete" onClick={() => onDeleteItem(id)}></i> */}
         </th>
       </tr>
     );

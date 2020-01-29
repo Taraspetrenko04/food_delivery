@@ -9,8 +9,9 @@ import Login from '../Login';
 import Registration from '../Registration';
 import Footer from '../Footer';
 import "../../index.css";
-import ShoppingCard from "../ShopingCard"; 
-
+import ShoppingCard from "../ShopingCard";
+import 'font-awesome/css/font-awesome.css';
+// import { FontAwesome } from 'react-fontawesome';
 
 import { connect } from "react-redux"; //дает доступ к store
 
@@ -54,7 +55,7 @@ class App extends Component {
 
             <Footer />
 
-            
+                  
       </Fragment>
     );
   }

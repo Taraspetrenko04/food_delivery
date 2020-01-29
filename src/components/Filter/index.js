@@ -3,6 +3,11 @@ import './style.css';
 import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux"; //bind action && dispatch
 import * as actions from "../../actions/items";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWineBottle } from '@fortawesome/free-solid-svg-icons';
+import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
+import { faHamburger } from '@fortawesome/free-solid-svg-icons';
+import { faLeaf } from '@fortawesome/free-solid-svg-icons';
 
 class Filter extends Component {
   
@@ -21,10 +26,10 @@ class Filter extends Component {
     return(
         <div className='filter__wrapper'>
             <ul>
-                <li onClick={getCategory} className='drink' alt='drink' name='drink'><i className="fas fa-wine-bottle"></i></li>
-                <li onClick={getCategory} className='pizza'><i className="fas fa-pizza-slice"></i></li>
-                <li onClick={getCategory} className='burger'><i className="fas fa-hamburger"></i></li>
-                <li onClick={getCategory} className='salad'><i className="fas fa-leaf"></i></li>
+                <li onClick={getCategory} className='drink' alt='drink' name='drink'><FontAwesomeIcon icon={faWineBottle} /></li>
+                <li onClick={getCategory} className='pizza'><FontAwesomeIcon icon={faPizzaSlice} /></li>
+                <li onClick={getCategory} className='burger'><FontAwesomeIcon icon={faHamburger} /></li>
+                <li onClick={getCategory} className='salad'><FontAwesomeIcon icon={faLeaf}/></li>
             </ul>
         </div>
     )

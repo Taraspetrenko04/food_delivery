@@ -8,6 +8,8 @@ import { connect } from "react-redux"; //дает доступ к store
 import { bindActionCreators } from "redux";//bind action && dispatch
 import * as actions from "../../actions/items"; //импортируем все екшены(1) в bindActionCreator 
 import SideBar from "../SideBar";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
 
 class Header extends Component{
@@ -35,7 +37,8 @@ class Header extends Component{
 
 
                <div className='header__card' onClick={goToProductCard}>
-                 <i className="fas fa-shopping-basket header__card-text"></i>
+               <FontAwesomeIcon icon={faShoppingBasket} className="header__card-text"/>
+                 {/* <i className="fas fa-shopping-basket header__card-text"></i> */}
                 <p className="header__card-text">${orderTotal}</p>
                </div>
 
