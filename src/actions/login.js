@@ -1,4 +1,6 @@
-export const sidebarMobileOpen = () =>({ type: "SIDEBAR_OPEN" });
+export const sidebarMobileOpen = () =>{ 
+  return {type: "SIDEBAR_OPEN" }
+};
 
 
 export const sidebarMobileClose = () => ({ type: "SIDEBAR_CLOSE" });

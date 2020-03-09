@@ -9,7 +9,7 @@ import App from "./components/App";
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <Router basename="/food_delivery/">
       <div className="container">
         <App />
       </div>

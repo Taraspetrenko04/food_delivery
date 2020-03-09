@@ -58,22 +58,7 @@
     }
   ],
   loading: false,
-  shoppingCard: [
-    // {
-    //   id: 1,
-    //   title: "Pepsi",
-    //   category: "drink",
-    //   picture: "/images/pepsi.png",
-    //   price: 5
-    // },
-    // {
-    //   id: 2,
-    //   title: "Toscana",
-    //   category: "pizza",
-    //   picture: "/images/toskana.jpg",
-    //   price: 15
-    // },
-  ],
+  shoppingCard: [],
   orderTotal: 0
 };
 

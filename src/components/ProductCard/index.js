@@ -9,7 +9,7 @@ import * as actions from "../../actions/items";
 
 class ProductCard extends Component {
 
-
+  location = window.location.href;
   timer = null;
   
 
@@ -32,9 +32,10 @@ class ProductCard extends Component {
   const { productId, food, history, /*isLoaded,*/ loading,  /*isLoadedFalse*/ } = this.props;
   
   
+  
   const currentPoduct = food.find(elem => elem.id === +productId);
   const { title, price, picture, id } = currentPoduct;
-
+  console.log(this.location);
 
   const redirectHome = () => history.push(`/`);
   

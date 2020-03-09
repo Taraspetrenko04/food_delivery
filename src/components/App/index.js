@@ -20,44 +20,26 @@ import { connect } from "react-redux"; //дает доступ к store
 // import * as actions from "../../storeTest/actionTest.js/index.js.js"; //импортируем все екшены(1) в bindActionCreator
 
 class App extends Component {
-  
-
   render() {
- 
-
     return (
-      <Fragment>
-      
+      <div>
             <BackDrop />
             <SideBar />
-            
-
             <Header />
-
-
             <Switch>
-              {/* <Route exact path="/" component={ props => <Layout> <Filter/> </Layout> }/> */}
               <Route exact path="/" component={ Layout } />
-              <Route exact path="/login" component={ Login }/>
-              <Route exact path="/registration" component={ Registration }/>
-              <Route exact path="/shopping-card" component={ ShoppingCard}/>
-
-
-              <Route exact path="/products/:id" 
+              <Route path="/login" component={ Login }/>
+              <Route path="/registration" component={ Registration }/>
+              <Route path="/shopping-card" component={ ShoppingCard}/>
+              <Route path="/products/:id" 
                   render={ ( {match, history} ) =>{
                     const id = match.params.id
                     return <ProductCard  productId={id} /> 
                   } } 
               />
-
-
-              {/* <Route path="*" component={NotFound}/> */}
             </Switch>
-
-
-            <Footer />
-                  
-      </Fragment>
+            <Footer />         
+      </div>
     );
   }
 }

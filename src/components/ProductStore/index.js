@@ -8,39 +8,38 @@ import * as actions from "../../actions";
 
 
 const ProductStore = (props) => {
-    const {food, /*cardLoaded, history*/} = props;     
-    return(
-      <div className='product-store'>
-          <ul className='product-store__list'>
-             {food.map( (item) => {
-                 return(
-                <li style={{border: 'none'}} key={item.id}><ProductItem item={item} /></li> 
-                 )
-             })
-          }
-          </ul>
-      </div>
+  const { food, /*cardLoaded, history*/ } = props;
+  return (
+    <div className='product-store'>
+      <ul className='product-store__list'>
+        {food.map((item) => {
+          return (
+            <li style={{ border: 'none' }} key={item.id}><ProductItem item={item} /></li>
+          )
+        })
+        }
+      </ul>
+    </div>
   )
 }
 
 
 const mapStateToProps = state => {
-    return {
-        loading: state.items.loading,
-        food: state.items.food,
-        // cardLoaded: state.productCard.cardLoaded,
-    };
+  return {
+    loading: state.items.loading,
+    food: state.items.food,
+  };
 };
 
 
 const mapDispatchToProps = dispatch => {
-    const { isLoaded, isCardLoaded} = bindActionCreators(actions, dispatch);
-    return {
-      isLoaded,
-      isCardLoaded,
-    };
+  const { isLoaded, isCardLoaded } = bindActionCreators(actions, dispatch);
+  return {
+    isLoaded,
+    isCardLoaded,
   };
+};
 
-  
+
 export default connect(mapStateToProps, mapDispatchToProps)(ProductStore);
 
