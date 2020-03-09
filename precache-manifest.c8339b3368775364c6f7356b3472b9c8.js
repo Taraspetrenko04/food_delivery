@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f898b6ed6ee9e12d872426b8fff54c1c",
+    "revision": "d5e8644f36cf0f787408bc79c82a7808",
     "url": "//taraspetrenko04.github.io/food_delivery/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "//taraspetrenko04.github.io/food_delivery/static/css/2.0c49c761.chunk.css"
   },
   {
-    "revision": "f6b85123873bdf48d03d",
+    "revision": "ceb9edc940379b8a97c5",
     "url": "//taraspetrenko04.github.io/food_delivery/static/css/main.2dba33c0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "//taraspetrenko04.github.io/food_delivery/static/js/2.f7b99311.chunk.js"
   },
   {
-    "revision": "f6b85123873bdf48d03d",
-    "url": "//taraspetrenko04.github.io/food_delivery/static/js/main.c88ed03e.chunk.js"
+    "revision": "ceb9edc940379b8a97c5",
+    "url": "//taraspetrenko04.github.io/food_delivery/static/js/main.148843bc.chunk.js"
   },
   {
     "revision": "ca0b33defce68989003d",
