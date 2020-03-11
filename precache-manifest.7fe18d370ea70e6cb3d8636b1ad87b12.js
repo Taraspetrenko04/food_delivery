@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "36de6e8d01e45e1d54fcab5ab23347e4",
+    "revision": "d9cc9a38bef533bc8e84cacca1c59122",
     "url": "/food_delivery/index.html"
   },
   {
-    "revision": "2df23d55a17d25f9c25c",
+    "revision": "3017efc377ef86a86502",
     "url": "/food_delivery/static/css/2.6baff533.chunk.css"
   },
   {
-    "revision": "620a3c0b27c537dc80a0",
+    "revision": "364e2ee0a74985598870",
     "url": "/food_delivery/static/css/main.2dba33c0.chunk.css"
   },
   {
-    "revision": "2df23d55a17d25f9c25c",
-    "url": "/food_delivery/static/js/2.f7b99311.chunk.js"
+    "revision": "3017efc377ef86a86502",
+    "url": "/food_delivery/static/js/2.c3e4d0f9.chunk.js"
   },
   {
-    "revision": "620a3c0b27c537dc80a0",
-    "url": "/food_delivery/static/js/main.18d1ea41.chunk.js"
+    "revision": "364e2ee0a74985598870",
+    "url": "/food_delivery/static/js/main.63faae9f.chunk.js"
   },
   {
     "revision": "e00085530f8c774170cc",
@@ -42,5 +42,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
     "url": "/food_delivery/static/media/fontawesome-webfont.fee66e71.woff"
+  },
+  {
+    "revision": "725f3839309b1aa80fc9da03e7961d97",
+    "url": "/food_delivery/static/media/pepsi.725f3839.png"
   }
 ]);
