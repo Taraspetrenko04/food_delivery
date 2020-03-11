@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "039a805a42527432a96f65b5e0f8d579",
+    "revision": "36de6e8d01e45e1d54fcab5ab23347e4",
     "url": "/food_delivery/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/food_delivery/static/css/2.6baff533.chunk.css"
   },
   {
-    "revision": "248e5d73c212ffac3c40",
+    "revision": "620a3c0b27c537dc80a0",
     "url": "/food_delivery/static/css/main.2dba33c0.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/food_delivery/static/js/2.f7b99311.chunk.js"
   },
   {
-    "revision": "248e5d73c212ffac3c40",
-    "url": "/food_delivery/static/js/main.4e5b47e7.chunk.js"
+    "revision": "620a3c0b27c537dc80a0",
+    "url": "/food_delivery/static/js/main.18d1ea41.chunk.js"
   },
   {
     "revision": "e00085530f8c774170cc",
