@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3cf5190ab08280f99750a71336f93f0a",
+    "revision": "ff2ba430b5f3b368ec8f8caf37fbf779",
     "url": "/food_delivery/index.html"
   },
   {
-    "revision": "3017efc377ef86a86502",
+    "revision": "8607ca6947f56562ace7",
     "url": "/food_delivery/static/css/2.6baff533.chunk.css"
   },
   {
-    "revision": "379ba14bc7b25ab077fe",
+    "revision": "42a773ecffead094f55c",
     "url": "/food_delivery/static/css/main.2dba33c0.chunk.css"
   },
   {
-    "revision": "3017efc377ef86a86502",
-    "url": "/food_delivery/static/js/2.c3e4d0f9.chunk.js"
+    "revision": "8607ca6947f56562ace7",
+    "url": "/food_delivery/static/js/2.046b3e04.chunk.js"
   },
   {
-    "revision": "379ba14bc7b25ab077fe",
-    "url": "/food_delivery/static/js/main.a1acc24b.chunk.js"
+    "revision": "42a773ecffead094f55c",
+    "url": "/food_delivery/static/js/main.a3586d08.chunk.js"
   },
   {
     "revision": "e00085530f8c774170cc",
@@ -42,9 +42,5 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
     "url": "/food_delivery/static/media/fontawesome-webfont.fee66e71.woff"
-  },
-  {
-    "revision": "725f3839309b1aa80fc9da03e7961d97",
-    "url": "/food_delivery/static/media/pepsi.725f3839.png"
   }
 ]);
